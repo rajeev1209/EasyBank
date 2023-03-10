@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: raj120986/easybank:accounts
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - eazybank-network
+
+  loans:
+    image: raj120986/easybank:loans
+    mem_limit: 700m
+    ports:
+      - "7070:7070"
+    networks:
+      - eazybank-network
+
+  cards:
+    image: raj120986/easybank:cards
+    mem_limit: 700m
+    ports:
+      - "9090:9090"
+    networks:
+      - eazybank-network
+
+networks:
+  eazybank-network:
