@@ -1,0 +1,12 @@
+server:
+  port: 9091
+
+cards:
+  msg: Welcome to the EazyBank Card Prd application
+  build-version: 2
+  mailDetails:
+    hostName: prd-cards@eazybytes.com
+  activeBranches:
+    - "Chennai"
+    - "Berlin"
+    - "Toronto"

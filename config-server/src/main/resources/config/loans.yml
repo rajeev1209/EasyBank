@@ -13,7 +13,13 @@ spring:
     console:
       enabled: true
 
-server:
-  port: 9090
-
+loans:
+  msg: Welcome to the EazyBank Loan Default application
+  build-version: 2
+  mailDetails:
+    hostName: default-loans@eazybytes.com
+  activeBranches:
+    - "Chennai"
+    - "Berlin"
+    - "Toronto"
 

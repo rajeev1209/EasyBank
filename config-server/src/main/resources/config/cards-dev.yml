@@ -1,0 +1,13 @@
+server:
+  port: 9090
+
+
+cards:
+  msg: Welcome to the EazyBank Card Dev application
+  build-version: 4
+  mailDetails:
+    hostName: dev-cards@eazybytes.com
+  activeBranches:
+    - "Chennai"
+    - "Berlin"
+    - "Toronto"

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+
+accounts:
+  msg: Welcome to the EazyBank Accounts Dev application
+  build-version: 4
+  mailDetails:
+    hostName: dev-accounts@eazybytes.com
+  activeBranches:
+    - "Chennai"
+    - "Berlin"
+    - "Toronto"

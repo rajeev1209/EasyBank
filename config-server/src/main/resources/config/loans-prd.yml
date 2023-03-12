@@ -1,0 +1,12 @@
+server:
+  port: 7071
+
+loans:
+  msg: Welcome to the EazyBank Loan Prod application
+  build-version: 3
+  mailDetails:
+    hostName: prod-loans@eazybytes.com
+  activeBranches:
+    - "Chennai"
+    - "Berlin"
+    - "Toronto"

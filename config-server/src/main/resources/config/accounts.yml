@@ -13,6 +13,14 @@ spring:
     console:
       enabled: true
 
-server:
-  port: 7070
+accounts:
+  msg: Welcome to the EazyBank Accounts Default application
+  build-version: 3
+  mailDetails:
+    hostName: default-accounts@eazybytes.com
+  activeBranches:
+    - "Mumbai"
+    - "London"
+    - "Washington"
+
 
