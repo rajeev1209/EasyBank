@@ -25,13 +25,13 @@ public class AccountController {
     @Autowired
     AccountsConfig accountsConfig;
 
-    @PostMapping("/myAccount")
+    @PostMapping("/myAccounts")
     public Accounts getAccountDetails(@RequestBody Customer customer){
         Accounts accounts = accountRepository.findByCustomerId(customer.getCustomerId());
         return Optional.ofNullable(accounts).orElse(null);
     }
 
-    @GetMapping("/account/properties")
+    @GetMapping("/accounts/properties")
     public String getPropertyDetails() throws JsonProcessingException {
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         Properties properties = new Properties(accountsConfig.getMsg(), accountsConfig.getBuildVersion(),

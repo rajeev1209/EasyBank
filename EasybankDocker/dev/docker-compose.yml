@@ -1,0 +1,70 @@
+version: "3.8"
+
+services:
+
+  configserver:
+    image: raj120986/easybank:configserver
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+     - eazybank-network
+
+  accounts:
+    image: raj120986/easybank:accounts
+    mem_limit: 700m
+    ports:
+      - "8070:8070"
+    networks:
+      - eazybank-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8080/
+
+  loans:
+    image: raj120986/easybank:loans
+    mem_limit: 700m
+    ports:
+      - "7070:7070"
+    networks:
+      - eazybank-network
+    depends_on:
+      - configserver
+    deploy:
+        restart_policy:
+          condition: on-failure
+          delay: 10s
+          max_attempts: 3
+          window: 120s
+    environment:
+        SPRING_PROFILES_ACTIVE: dev
+        SPRING_CONFIG_IMPORT: configserver:http://configserver:8080/
+  cards:
+    image: raj120986/easybank:cards
+    mem_limit: 700m
+    ports:
+      - "9090:9090"
+    networks:
+      - eazybank-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8080/
+
+networks:
+  eazybank-network:
