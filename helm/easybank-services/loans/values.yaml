@@ -1,0 +1,22 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploymentName: loans-deployment
+deploymentLabel: loans
+
+replicaCount: 2
+
+image:
+  repository: raj120986/easybank
+  tag: loans
+
+containerPort: 7070
+
+service:
+  type: LoadBalancer
+  port: 7070
+  targetPort: 7070
+
+config_enabled: true
+profile_enabled: true
+eureka_enabled: true

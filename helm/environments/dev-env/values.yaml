@@ -1,0 +1,5 @@
+global:
+  configMapName: easybankdev-configmap
+  activeProfile: dev
+  configServerURL: configserver:http://configserver:8080/
+  eurekaServerURL: http://eurekaserver:6060/eureka/
